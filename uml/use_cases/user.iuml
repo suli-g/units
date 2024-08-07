@@ -1,0 +1,34 @@
+@startuml
+
+skinparam linetype ortho
+actor User as user
+
+rectangle Items {
+    usecase add_item [
+        Add Item
+    ]
+    usecase remove_item [
+        Remove Item
+    ]
+    usecase update_item [
+        Update Item
+    ]
+    usecase view_item [
+        View Item
+    ]
+    usecase list_items [
+        List Items
+        --
+        **Extension Points**
+        * User selects a specific item to view.
+    ]
+    view_item .down.> list_items : <<extend>>
+}
+
+user -- update_item
+user -- add_item
+user -- remove_item
+user -- view_item
+user -- list_items
+
+@enduml
