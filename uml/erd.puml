@@ -1,0 +1,21 @@
+@startuml
+entity Unit {
+    name str
+    symbol str
+}
+
+entity UnitModifier {
+    prefix str
+    suffix str
+    term str
+    scale float
+}
+
+entity SubUnit {
+    modifier UnitModifier
+    unit Unit
+}
+
+SubUnit ||--o| UnitModifier
+SubUnit ||--o| Unit
+@enduml

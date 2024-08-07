@@ -1,0 +1,54 @@
+@startuml
+!include user.iuml
+skinparam linetype ortho
+left to right direction
+actor Admin as admin
+
+rectangle BaseUnits {
+    usecase (Add Unit) as add_unit
+    usecase (Remove Unit) as remove_unit
+    usecase (Update Unit) as update_unit
+    usecase use_unit [
+        Use Unit
+        ----
+        **Extension Points**
+        * When added
+    ]
+    add_unit ..> use_unit : <<include>>
+}
+
+rectangle SubUnits {
+    usecase (Select Sub-Unit) as select_sub_unit
+    usecase add_sub_unit [
+        Add Sub-Unit
+        ----
+        **Extension Points**
+        * Sub-Unit created using unit as base
+    ]
+    usecase (Remove Sub-Unit) as remove_sub_unit
+    usecase (Update Sub-Unit) as update_sub_unit
+    usecase use_sub_unit [
+        Use Sub-Unit
+        --
+        **Extension Points**
+        
+        * Sub-Unit updated
+        * Sub-Unit removed
+    ]
+
+    use_unit ..> add_sub_unit : <<extend>>
+    update_unit ..> use_sub_unit : <<extend>>
+    remove_unit ..> use_sub_unit : <<extend>>
+}
+
+admin -- update_unit
+admin -- add_unit
+admin -- remove_unit
+
+admin -- add_sub_unit
+admin -- remove_sub_unit
+admin -- update_sub_unit
+
+admin --|> user
+
+@enduml
