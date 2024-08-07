@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "unit-converter"
+name = "units"
 version = "0.1.0"
 description = "This is a Django application that simplifies unit conversions. Define base units and extend them with subunits. Easily create items measured in these units and convert properties seamlessly."
 authors = ["Sulaiman Gafoor <5022721+suli-g@users.noreply.github.com>"]
@@ -22,8 +22,12 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "unit_converter.settings"
+DJANGO_SETTINGS_MODULE = "units.settings"
 python_files = ["test_*.py", "*_test.py", "testing/python/*.py"]
 
 [tool.poe.tasks]
-test        = "pytest"
+test            = "pytest"
+test-style      = "pytest --ruff"
+test-format     = "pytest --ruff --ruff-format"
+check-style     = "ruff check"
+reformat        = "ruff format"
