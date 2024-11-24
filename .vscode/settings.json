@@ -1,5 +1,11 @@
 {
     "flake8.args": [
         "--max-line-length=88"
-    ]
+    ],
+    "[python]": {
+        "editor.rulers": [
+            {"color": "#ff0000", "column": 88},
+            {"color": "#00ff00", "column": 79}
+        ]
+    }
 }
