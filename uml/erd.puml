@@ -1,0 +1,11 @@
+@startuml
+entity Unit {
+    name: str
+    symbol: str
+    --
+    scale: float
+    base: Unit
+}
+
+Unit ||--o| Unit
+@enduml
