@@ -1,12 +1,19 @@
 #!/usr/bin/env python
 """Django's command-line utility for administrative tasks."""
 
-import os
 import sys
 from dotenv import load_dotenv
 
 
 def main():
+    """
+    Loads environment variables from a .env file in this project's route
+    directory.
+
+    Environment Variables:
+        SECRET_KEY: The value to use for this Django project's SECRET_KEY.
+        DJANGO_SETTINGS_MODULE: The module path to this project's settings module.
+    """
     # Add support for reading from the .env file.
     load_dotenv()
     """Run administrative tasks."""
