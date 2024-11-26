@@ -14,13 +14,15 @@ class Unit(models.Model):
     Represents a unit of measurement.
 
     Properties:
-    - name: The name of the unit.
-    - symbol: The symbol of the unit.
-    - scale: The scale of the unit, defaults to 1.0.
-    - base: The base unit, if any.
+        name: The name of the unit.
+        symbol: The symbol of the unit.
+        scale: The scale of the unit, defaults to 1.0.
+        base: The base unit, if any.
     """
 
-    name: str = models.CharField(verbose_name="Unit Name", unique=True, max_length=32)
+    name: str = models.CharField(
+        verbose_name="Unit Name", unique=True, max_length=32
+    )
     """ The name of the unit. """
     base: Optional["Unit"] = models.ForeignKey(
         "Unit", on_delete=models.CASCADE, null=True, blank=True
@@ -45,8 +47,10 @@ class Unit(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self) -> str:
-        """Returns a string representation of this unit, including a comparison
-        to the base unit if this is a subunit, otherwise just the symbol."""
+        """
+        Returns a string representation of this unit, including a comparison
+        to the base unit if this is a subunit, otherwise just the symbol.
+        """
         if self.base is None:
             return self.symbol
         return f"{self.symbol} ({self.scale} x {self.base.symbol})"
