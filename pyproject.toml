@@ -32,8 +32,8 @@ DJANGO_SETTINGS_MODULE = "units.settings"
 python_files = ["**/tests.py"]
 
 [tool.poe.tasks]
-mk-docs         = "sphinx-build -M html ./docs/source ./docs/build "
-build-docs      = "sphinx-apidoc -o ./docs/source . --full"
+mk-docs         = "sphinx-build -M html ./sphinx/source ."
+build-docs      = "sphinx-apidoc -o ./sphinx/source . --full"
 test            = "pytest"
 test-style      = "pytest --ruff"
 test-format     = "pytest --ruff --ruff-format"

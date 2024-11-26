@@ -41,5 +41,6 @@ exclude_patterns = []
 
 html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
+html_output = os.path.abspath(".")
 django_show_db_tables = True
 django_show_db_tables_abstract = True
