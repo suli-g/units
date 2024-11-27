@@ -5,7 +5,7 @@ Models:
 - Unit: Represents a unit of measurement.
 """
 
-from typing import Optional
+from typing import Iterable, Optional
 from django.db import models
 
 
@@ -20,31 +20,49 @@ class Unit(models.Model):
         base: The base unit, if any.
     """
 
-    name: str = models.CharField(
+    name: models.CharField[str] = models.CharField(
         verbose_name="Unit Name", unique=True, max_length=32
     )
     """ The name of the unit. """
-    base: Optional["Unit"] = models.ForeignKey(
+    base: models.ForeignKey[Optional["Unit"]] = models.ForeignKey(
         "Unit", on_delete=models.CASCADE, null=True, blank=True
     )
     """ The base unit, if any. """
-    symbol: str = models.CharField(verbose_name="Unit Symbol", max_length=20)
+    symbol: models.CharField[str] = models.CharField(
+        verbose_name="Unit Symbol", max_length=20
+    )
     """ The symbol of the unit. """
-    scale: float = models.FloatField(verbose_name="Unit Scale", default=1.0)
+    scale: models.FloatField[float] = models.FloatField(
+        verbose_name="Unit Scale", default=1.0
+    )
     """ The scale of the unit, defaults to 1.0. """
 
-    def save(self, *args, **kwargs) -> None:
+    def save(
+        self,
+        force_insert: bool = False,
+        force_update: bool = False,
+        using: Optional[str] = None,
+        update_fields: Optional[Iterable[str]] = None,
+    ) -> None:
         """
         Overrides the default save method for this model, ensuring that only
         base units may have a scale of 1.0.
 
-
+        Parameters:
+            force_insert:
+                Forces the SQL statement used for saving to be an INSERT,
+                defaults to False.
+            force_update:
+                Forces the SQL statement used for saving to be an UPDATE,
+                defaults to False.
+            using: The database alias to use for the query.
+            update_fields: The fields to update, if any.
         Raises:
-            ValidationError: If this unit has both a base and a scale of 1.0.
+            AttributeError: If this unit has both a base and a scale of 1.0.
         """
         if self.base is not None and self.scale == 1.0:
             raise AttributeError("Sub units may not have a scale of 1.0.")
-        super().save(*args, **kwargs)
+        super().save(force_insert, force_update, using, update_fields)
 
     def __str__(self) -> str:
         """
