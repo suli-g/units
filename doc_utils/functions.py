@@ -13,4 +13,4 @@ def build_docs_and_move(
     builder = SphinxBuilder(source_path, generated_directory, docs_directory)
     print(builder.command)
     builder.build()
-    # builder.move()
+    builder.move()
