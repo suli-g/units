@@ -32,7 +32,7 @@ DJANGO_SETTINGS_MODULE = "units.settings"
 python_files = ["**/tests.py"]
 
 [tool.poe.tasks]
-mk-docs         = "python ./generate_docs.py -b"
+mk-docs         = "python doc_utils -b"
 build-docs      = "sphinx-apidoc -o ./sphinx/source . --full"
 test            = "pytest"
 test-style      = "pytest --ruff"

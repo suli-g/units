@@ -1,4 +1,4 @@
-from .functions import build_docs_and_move
+from functions import build_docs_and_move
 
 ABBREVIATIONS = {
     "b": "build",

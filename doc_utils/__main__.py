@@ -1,5 +1,5 @@
 import os
-import doc_utils.constants as dc
+import constants as dc
 
 
 import sys
@@ -31,7 +31,7 @@ def main():
     if key not in dc.COMMANDS:
         print(f"'{flag}' is not a valid flag.")
     else:
-        dc.ACTIONS[key](os.path.dirname(__file__))
+        dc.ACTIONS[key](os.getcwd())
 
 
 if __name__ == "__main__":

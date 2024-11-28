@@ -20,19 +20,19 @@ class Unit(models.Model):
         base: The base unit, if any.
     """
 
-    name: models.CharField[str] = models.CharField(
+    name: models.CharField = models.CharField( # type: ignore
         verbose_name="Unit Name", unique=True, max_length=32
     )
     """ The name of the unit. """
-    base: models.ForeignKey[Optional["Unit"]] = models.ForeignKey(
+    base: models.ForeignKey = models.ForeignKey(
         "Unit", on_delete=models.CASCADE, null=True, blank=True
     )
     """ The base unit, if any. """
-    symbol: models.CharField[str] = models.CharField(
+    symbol: models.CharField = models.CharField(
         verbose_name="Unit Symbol", max_length=20
     )
     """ The symbol of the unit. """
-    scale: models.FloatField[float] = models.FloatField(
+    scale: models.FloatField = models.FloatField(
         verbose_name="Unit Scale", default=1.0
     )
     """ The scale of the unit, defaults to 1.0. """

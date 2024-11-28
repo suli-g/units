@@ -11,6 +11,7 @@
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
+    <link rel="canonical" href="https://sulig.github.io/units/docs/unit_manager.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=2709fde1"></script>
@@ -152,12 +153,15 @@
 <p>Configuration for the <cite>unit_manager</cite> application.</p>
 <p>This module defines the configuration for the <cite>unit_manager</cite> app,
 allowing Django to identify and initialize it properly.</p>
-<p>Classes:
-- UnitManagerConfig: Configures the <cite>unit_manager</cite> application.</p>
+<dl class="simple">
+<dt>Classes:</dt><dd><p>UnitManagerConfig: Configures the <cite>unit_manager</cite> application.</p>
+</dd>
+</dl>
 <dl class="py class">
 <dt class="sig sig-object py" id="unit_manager.apps.UnitManagerConfig">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unit_manager.apps.</span></span><span class="sig-name descname"><span class="pre">UnitManagerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/apps.html#UnitManagerConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.apps.UnitManagerConfig" title="Link to this definition"></a></dt>
 <dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
+<p>Configures the <cite>unit_manager</cite> application.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unit_manager.apps.UnitManagerConfig.default_auto_field">
 <span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#unit_manager.apps.UnitManagerConfig.default_auto_field" title="Link to this definition"></a></dt>
@@ -182,11 +186,13 @@ allowing Django to identify and initialize it properly.</p>
 <dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
 <p><strong>Database table:</strong> <code class="docutils literal notranslate"><span class="pre">unit_manager_unit</span></code></p>
 <p>Represents a unit of measurement.</p>
-<p>Properties:
-- name: The name of the unit.
-- symbol: The symbol of the unit.
-- scale: The scale of the unit, defaults to 1.0.
-- base: The base unit, if any.</p>
+<dl class="simple">
+<dt>Properties:</dt><dd><p>name: The name of the unit.
+symbol: The symbol of the unit.
+scale: The scale of the unit, defaults to 1.0.
+base: The base unit, if any.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -231,7 +237,7 @@ allowing Django to identify and initialize it properly.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unit_manager.models.Unit.base">
-<span class="sig-name descname"><span class="pre">base</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#unit_manager.models.Unit" title="unit_manager.models.Unit"><span class="pre">Unit</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.base" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">base</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v5.1)"><span class="pre">ForeignKey</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.base" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#unit_manager.models.Unit" title="unit_manager.models.Unit"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unit</span></code></a></p>
 <p>Base (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">unit</span></code>)</p>
 </dd></dl>
@@ -252,7 +258,7 @@ allowing Django to identify and initialize it properly.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unit_manager.models.Unit.name">
-<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.name" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><span class="pre">CharField</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.name" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
 <p>Unit Name</p>
 </dd></dl>
@@ -264,26 +270,36 @@ allowing Django to identify and initialize it properly.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="unit_manager.models.Unit.save">
-<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/unit_manager/models.html#Unit.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.models.Unit.save" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force_insert</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">using</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.13)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/unit_manager/models.html#Unit.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.models.Unit.save" title="Link to this definition"></a></dt>
 <dd><p>Overrides the default save method for this model, ensuring that only
 base units may have a scale of 1.0.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>ValidationError</strong> – If this unit has both a base and a scale of 1.0.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>force_insert</strong> – Forces the SQL statement used for saving to be an INSERT,
+defaults to False.</p></li>
+<li><p><strong>force_update</strong> – Forces the SQL statement used for saving to be an UPDATE,
+defaults to False.</p></li>
+<li><p><strong>using</strong> – The database alias to use for the query.</p></li>
+<li><p><strong>update_fields</strong> – The fields to update, if any.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#AttributeError" title="(in Python v3.13)"><strong>AttributeError</strong></a> – If this unit has both a base and a scale of 1.0.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unit_manager.models.Unit.scale">
-<span class="sig-name descname"><span class="pre">scale</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.13)"><span class="pre">float</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.scale" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">scale</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.FloatField" title="(in Django v5.1)"><span class="pre">FloatField</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.scale" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.FloatField" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FloatField</span></code></a></p>
 <p>Unit Scale</p>
 </dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="unit_manager.models.Unit.symbol">
-<span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.symbol" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><span class="pre">CharField</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.symbol" title="Link to this definition"></a></dt>
 <dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
 <p>Unit Symbol</p>
 </dd></dl>

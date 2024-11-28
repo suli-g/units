@@ -1,0 +1,29 @@
+doc\_utils package
+==================
+
+Submodules
+----------
+
+doc\_utils.constants module
+---------------------------
+
+.. automodule:: doc_utils.constants
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+doc\_utils.functions module
+---------------------------
+
+.. automodule:: doc_utils.functions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: doc_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
