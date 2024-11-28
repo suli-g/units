@@ -25,7 +25,7 @@ class SphinxBuilder:
         self._command.extend([self.source, self.destination])
 
     def reset(self):
-        html_directory = os.path.join(self.destination, "html")
+        html_directory = os.path.join(self.destination, "docs")
         if not os.path.exists(html_directory):
             return
         shutil.rmtree(html_directory)

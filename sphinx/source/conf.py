@@ -41,7 +41,7 @@ exclude_patterns = ["doc_utils"]
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = "sphinx_rtd_theme"
-html_static_path = ["_static"]
 html_baseurl = environ.get("GITHUB_PAGES_URL")
+html_static_path = ["_static"]
 django_show_db_tables = True
 django_show_db_tables_abstract = True
