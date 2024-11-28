@@ -26,17 +26,22 @@ class SphinxBuilder:
 
     def reset(self):
         html_directory = os.path.join(self.destination, "docs")
-        if not os.path.exists(html_directory):
-            return
-        shutil.rmtree(html_directory)
+        if os.path.exists(html_directory):
+            shutil.rmtree(html_directory)
+        return self
 
     def build(self):
         sp.run(self._command)
+        return self
 
     def move_to(self, docs_path: str):
-        if self.destination == docs_path:
-            return
-        shutil.move("html", docs_path)
+        if self.destination != docs_path:
+            shutil.move("html", docs_path)
+        return self
+
+    def add_no_jekyll(self, docs_path: str):
+        open(os.path.join(docs_path, ".nojekyll"), "x").close()
+        return self
 
     @property
     def command(self) -> str:

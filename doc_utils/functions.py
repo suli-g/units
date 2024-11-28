@@ -10,7 +10,4 @@ def build_docs_and_move(
     docs_path: str = "docs",
 ):
     builder = SphinxBuilder(root_dir, source_path, output_path)
-    print(builder.command)
-    builder.reset()
-    builder.build()
-    builder.move_to(docs_path)
+    builder.reset().build().move_to(docs_path).add_no_jekyll(docs_path)
