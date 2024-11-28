@@ -25,17 +25,18 @@ class SphinxBuilder:
         self._command.extend([self.source, self.destination])
 
     def reset(self):
-        if not os.path.exists(self.destination):
+        html_directory = os.path.join(self.destination, "html")
+        if not os.path.exists(html_directory):
             return
-        shutil.rmtree(self.destination)
+        shutil.rmtree(html_directory)
 
     def build(self):
         sp.run(self._command)
 
-    def move(self):
-        if self.source == self.destination:
+    def move_to(self, docs_path: str):
+        if self.destination == docs_path:
             return
-        shutil.move("html", "docs")
+        shutil.move("html", docs_path)
 
     @property
     def command(self) -> str:
