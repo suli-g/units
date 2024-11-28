@@ -1,6 +1,8 @@
 units package
 =============
 
+Contains the main application configuration for the Units project.
+
 Submodules
 ----------
 

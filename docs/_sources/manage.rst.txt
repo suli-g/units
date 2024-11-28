@@ -1,7 +1,7 @@
 manage Module
 =============
 
-The **`manage`** module provides the following commands from Django's `manage.py` file:
+This module accepts arguments from the command line and provides the following commands from Django's `manage.py` file:
 
 - `runserver`: Starts the development server.
 - `migrate`: Applies database migrations.

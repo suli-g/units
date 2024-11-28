@@ -1,6 +1,8 @@
 unit\_manager package
 =====================
 
+Implements modules for the Unit Manager application.
+
 Subpackages
 -----------
 
