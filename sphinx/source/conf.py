@@ -5,6 +5,7 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+from nt import environ
 import sys
 import os
 import dotenv
@@ -33,7 +34,7 @@ extensions = [
 
 
 templates_path = ["_templates"]
-exclude_patterns = []
+exclude_patterns = ["doc_utils"]
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -41,5 +42,6 @@ exclude_patterns = []
 
 html_theme = "sphinx_rtd_theme"
 html_static_path = ["_static"]
+html_baseurl = environ.get("GITHUB_PAGES_URL")
 django_show_db_tables = True
 django_show_db_tables_abstract = True

@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>unit_manager package &mdash; Units 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+    <link rel="canonical" href="https://sulig.github.io/units/docs/unit_manager.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="unit_manager.migrations package" href="unit_manager.migrations.html" />
+    <link rel="prev" title="manage Module" href="manage.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Units
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="manage.html">manage Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">unit_manager package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unit_manager.migrations.html">unit_manager.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-unit_manager.admin">unit_manager.admin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-unit_manager.apps">unit_manager.apps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unit_manager.apps.UnitManagerConfig"><code class="docutils literal notranslate"><span class="pre">UnitManagerConfig</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.apps.UnitManagerConfig.default_auto_field"><code class="docutils literal notranslate"><span class="pre">UnitManagerConfig.default_auto_field</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.apps.UnitManagerConfig.name"><code class="docutils literal notranslate"><span class="pre">UnitManagerConfig.name</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-unit_manager.models">unit_manager.models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unit_manager.models.Unit"><code class="docutils literal notranslate"><span class="pre">Unit</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.DoesNotExist"><code class="docutils literal notranslate"><span class="pre">Unit.DoesNotExist</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.MultipleObjectsReturned"><code class="docutils literal notranslate"><span class="pre">Unit.MultipleObjectsReturned</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.base"><code class="docutils literal notranslate"><span class="pre">Unit.base</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.base_id"><code class="docutils literal notranslate"><span class="pre">Unit.base_id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.id"><code class="docutils literal notranslate"><span class="pre">Unit.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.name"><code class="docutils literal notranslate"><span class="pre">Unit.name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.objects"><code class="docutils literal notranslate"><span class="pre">Unit.objects</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.save"><code class="docutils literal notranslate"><span class="pre">Unit.save()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.scale"><code class="docutils literal notranslate"><span class="pre">Unit.scale</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.symbol"><code class="docutils literal notranslate"><span class="pre">Unit.symbol</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#unit_manager.models.Unit.unit_set"><code class="docutils literal notranslate"><span class="pre">Unit.unit_set</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-unit_manager.tests">unit_manager.tests module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#unit_manager.tests.base_unit"><code class="docutils literal notranslate"><span class="pre">base_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit_manager.tests.test_create_base_unit"><code class="docutils literal notranslate"><span class="pre">test_create_base_unit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit_manager.tests.test_create_subunit_with_valid_scale"><code class="docutils literal notranslate"><span class="pre">test_create_subunit_with_valid_scale()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit_manager.tests.test_subunit_symbol_str"><code class="docutils literal notranslate"><span class="pre">test_subunit_symbol_str()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit_manager.tests.test_subunit_with_invalid_scale_raises_error"><code class="docutils literal notranslate"><span class="pre">test_subunit_with_invalid_scale_raises_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit_manager.tests.test_unit_name_uniqueness_constraint"><code class="docutils literal notranslate"><span class="pre">test_unit_name_uniqueness_constraint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#unit_manager.tests.test_unit_symbol_str"><code class="docutils literal notranslate"><span class="pre">test_unit_symbol_str()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#module-unit_manager">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="units.html">units package</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Units</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">unit_manager package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/unit_manager.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="unit-manager-package">
+<h1>unit_manager package<a class="headerlink" href="#unit-manager-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="unit_manager.migrations.html">unit_manager.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="unit_manager.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="unit_manager.migrations.html#module-unit_manager.migrations.0001_initial">unit_manager.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="unit_manager.migrations.html#unit_manager.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="unit_manager.migrations.html#unit_manager.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unit_manager.migrations.html#unit_manager.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="unit_manager.migrations.html#unit_manager.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="unit_manager.migrations.html#module-unit_manager.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-unit_manager.admin">
+<span id="unit-manager-admin-module"></span><h2>unit_manager.admin module<a class="headerlink" href="#module-unit_manager.admin" title="Link to this heading"></a></h2>
+<p>Registers the Unit model in the admin site.</p>
+</section>
+<section id="module-unit_manager.apps">
+<span id="unit-manager-apps-module"></span><h2>unit_manager.apps module<a class="headerlink" href="#module-unit_manager.apps" title="Link to this heading"></a></h2>
+<p>Configuration for the <cite>unit_manager</cite> application.</p>
+<p>This module defines the configuration for the <cite>unit_manager</cite> app,
+allowing Django to identify and initialize it properly.</p>
+<dl class="simple">
+<dt>Classes:</dt><dd><p>UnitManagerConfig: Configures the <cite>unit_manager</cite> application.</p>
+</dd>
+</dl>
+<dl class="py class">
+<dt class="sig sig-object py" id="unit_manager.apps.UnitManagerConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unit_manager.apps.</span></span><span class="sig-name descname"><span class="pre">UnitManagerConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/apps.html#UnitManagerConfig"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.apps.UnitManagerConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/applications/#django.apps.AppConfig" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></a></p>
+<p>Configures the <cite>unit_manager</cite> application.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.apps.UnitManagerConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#unit_manager.apps.UnitManagerConfig.default_auto_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.apps.UnitManagerConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unit_manager'</span></em><a class="headerlink" href="#unit_manager.apps.UnitManagerConfig.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-unit_manager.models">
+<span id="unit-manager-models-module"></span><h2>unit_manager.models module<a class="headerlink" href="#module-unit_manager.models" title="Link to this heading"></a></h2>
+<p>Implements the Unit model for this application.</p>
+<p>Models:
+- Unit: Represents a unit of measurement.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="unit_manager.models.Unit">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">unit_manager.models.</span></span><span class="sig-name descname"><span class="pre">Unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/models.html#Unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.models.Unit" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/instances/#django.db.models.Model" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></a></p>
+<p><strong>Database table:</strong> <code class="docutils literal notranslate"><span class="pre">unit_manager_unit</span></code></p>
+<p>Represents a unit of measurement.</p>
+<dl class="simple">
+<dt>Properties:</dt><dd><p>name: The name of the unit.
+symbol: The symbol of the unit.
+scale: The scale of the unit, defaults to 1.0.
+base: The base unit, if any.</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v5.1)"><em>BigAutoField</em></a>) – Primary key: ID</p></li>
+<li><p><strong>name</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><em>CharField</em></a>) – <p>Unit Name</p>
+<p>The name of the unit.</p>
+</p></li>
+<li><p><strong>symbol</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><em>CharField</em></a>) – <p>Unit Symbol</p>
+<p>The symbol of the unit.</p>
+</p></li>
+<li><p><strong>scale</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.FloatField" title="(in Django v5.1)"><em>FloatField</em></a>) – <p>Unit Scale</p>
+<p>The scale of the unit, defaults to 1.0.</p>
+</p></li>
+</ul>
+</dd>
+</dl>
+<p>Relationship fields:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>base</strong> (<a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#unit_manager.models.Unit" title="unit_manager.models.Unit"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unit</span></code></a>) – <p>Base (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">unit</span></code>)</p>
+<p>The base unit, if any.</p>
+</p>
+</dd>
+</dl>
+<p>Reverse relationships:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>unit</strong> (Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#unit_manager.models.Unit" title="unit_manager.models.Unit"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unit</span></code></a>) – All units of this unit (related name of <a class="reference internal" href="#unit_manager.models.Unit.base" title="unit_manager.models.Unit.base"><code class="xref py py-attr docutils literal notranslate"><span class="pre">base</span></code></a>)</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#unit_manager.models.Unit.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.ObjectDoesNotExist" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></a></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#unit_manager.models.Unit.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/exceptions/#django.core.exceptions.MultipleObjectsReturned" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.base">
+<span class="sig-name descname"><span class="pre">base</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v5.1)"><span class="pre">ForeignKey</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.base" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> to <a class="reference internal" href="#unit_manager.models.Unit" title="unit_manager.models.Unit"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unit</span></code></a></p>
+<p>Base (related name: <code class="xref py py-attr docutils literal notranslate"><span class="pre">unit</span></code>)</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.base_id">
+<span class="sig-name descname"><span class="pre">base_id</span></span><a class="headerlink" href="#unit_manager.models.Unit.base_id" title="Link to this definition"></a></dt>
+<dd><p>Internal field, use <a class="reference internal" href="#unit_manager.models.Unit.base" title="unit_manager.models.Unit.base"><code class="xref py py-class docutils literal notranslate"><span class="pre">base</span></code></a> instead.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#unit_manager.models.Unit.id" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.BigAutoField" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">BigAutoField</span></code></a></p>
+<p>Primary key: ID</p>
+<p>A wrapper for a deferred-loading field. When the value is read from this</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><span class="pre">CharField</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.name" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Unit Name</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#unit_manager.models.Unit.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.save">
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">force_insert</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_update</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.13)"><span class="pre">bool</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">using</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">update_fields</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Iterable" title="(in Python v3.13)"><span class="pre">Iterable</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.13)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.13)"><span class="pre">None</span></a></span></span><a class="reference internal" href="_modules/unit_manager/models.html#Unit.save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.models.Unit.save" title="Link to this definition"></a></dt>
+<dd><p>Overrides the default save method for this model, ensuring that only
+base units may have a scale of 1.0.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>force_insert</strong> – Forces the SQL statement used for saving to be an INSERT,
+defaults to False.</p></li>
+<li><p><strong>force_update</strong> – Forces the SQL statement used for saving to be an UPDATE,
+defaults to False.</p></li>
+<li><p><strong>using</strong> – The database alias to use for the query.</p></li>
+<li><p><strong>update_fields</strong> – The fields to update, if any.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#AttributeError" title="(in Python v3.13)"><strong>AttributeError</strong></a> – If this unit has both a base and a scale of 1.0.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.scale">
+<span class="sig-name descname"><span class="pre">scale</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.FloatField" title="(in Django v5.1)"><span class="pre">FloatField</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.scale" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.FloatField" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">FloatField</span></code></a></p>
+<p>Unit Scale</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.symbol">
+<span class="sig-name descname"><span class="pre">symbol</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><span class="pre">CharField</span></a></em><a class="headerlink" href="#unit_manager.models.Unit.symbol" title="Link to this definition"></a></dt>
+<dd><p>Type: <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.CharField" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">CharField</span></code></a></p>
+<p>Unit Symbol</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="unit_manager.models.Unit.unit_set">
+<span class="sig-name descname"><span class="pre">unit_set</span></span><a class="headerlink" href="#unit_manager.models.Unit.unit_set" title="Link to this definition"></a></dt>
+<dd><p>Type: Reverse <a class="reference external" href="https://docs.djangoproject.com/en/stable/ref/models/fields/#django.db.models.ForeignKey" title="(in Django v5.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">ForeignKey</span></code></a> from <a class="reference internal" href="#unit_manager.models.Unit" title="unit_manager.models.Unit"><code class="xref py py-class docutils literal notranslate"><span class="pre">Unit</span></code></a></p>
+<p>All units of this unit (related name of <a class="reference internal" href="#unit_manager.models.Unit.base" title="unit_manager.models.Unit.base"><code class="xref py py-attr docutils literal notranslate"><span class="pre">base</span></code></a>)</p>
+<p>Accessor to the related objects manager on the reverse side of a
+many-to-one relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Parent.children</span></code> is a <code class="docutils literal notranslate"><span class="pre">ReverseManyToOneDescriptor</span></code> instance.</p>
+<p>Most of the implementation is delegated to a dynamically defined manager</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-unit_manager.tests">
+<span id="unit-manager-tests-module"></span><h2>unit_manager.tests module<a class="headerlink" href="#module-unit_manager.tests" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="unit_manager.tests.base_unit">
+<span class="sig-prename descclassname"><span class="pre">unit_manager.tests.</span></span><span class="sig-name descname"><span class="pre">base_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/tests.html#base_unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.tests.base_unit" title="Link to this definition"></a></dt>
+<dd><p>Fixture to create a base unit.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unit_manager.tests.test_create_base_unit">
+<span class="sig-prename descclassname"><span class="pre">unit_manager.tests.</span></span><span class="sig-name descname"><span class="pre">test_create_base_unit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/tests.html#test_create_base_unit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.tests.test_create_base_unit" title="Link to this definition"></a></dt>
+<dd><p>Test creating a base unit with no parent and scale of 1.0.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unit_manager.tests.test_create_subunit_with_valid_scale">
+<span class="sig-prename descclassname"><span class="pre">unit_manager.tests.</span></span><span class="sig-name descname"><span class="pre">test_create_subunit_with_valid_scale</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/tests.html#test_create_subunit_with_valid_scale"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.tests.test_create_subunit_with_valid_scale" title="Link to this definition"></a></dt>
+<dd><p>Test creating a subunit with a valid scale.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unit_manager.tests.test_subunit_symbol_str">
+<span class="sig-prename descclassname"><span class="pre">unit_manager.tests.</span></span><span class="sig-name descname"><span class="pre">test_subunit_symbol_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/tests.html#test_subunit_symbol_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.tests.test_subunit_symbol_str" title="Link to this definition"></a></dt>
+<dd><p>Test the string representation of a subunit.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unit_manager.tests.test_subunit_with_invalid_scale_raises_error">
+<span class="sig-prename descclassname"><span class="pre">unit_manager.tests.</span></span><span class="sig-name descname"><span class="pre">test_subunit_with_invalid_scale_raises_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/tests.html#test_subunit_with_invalid_scale_raises_error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.tests.test_subunit_with_invalid_scale_raises_error" title="Link to this definition"></a></dt>
+<dd><p>Test creating a subunit with a scale of 1.0 raises an error.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unit_manager.tests.test_unit_name_uniqueness_constraint">
+<span class="sig-prename descclassname"><span class="pre">unit_manager.tests.</span></span><span class="sig-name descname"><span class="pre">test_unit_name_uniqueness_constraint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/tests.html#test_unit_name_uniqueness_constraint"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.tests.test_unit_name_uniqueness_constraint" title="Link to this definition"></a></dt>
+<dd><p>Test that the <cite>name</cite> field enforces uniqueness.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unit_manager.tests.test_unit_symbol_str">
+<span class="sig-prename descclassname"><span class="pre">unit_manager.tests.</span></span><span class="sig-name descname"><span class="pre">test_unit_symbol_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_unit</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/unit_manager/tests.html#test_unit_symbol_str"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#unit_manager.tests.test_unit_symbol_str" title="Link to this definition"></a></dt>
+<dd><p>Test the string representation of a base unit.</p>
+</dd></dl>
+
+</section>
+<section id="module-unit_manager">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-unit_manager" title="Link to this heading"></a></h2>
+<p>The main implementation for the units application.</p>
+<dl class="simple">
+<dt>Modules:</dt><dd><p>admin.py: Adds the <cite>Unit</cite> model to the admin dashboard.
+apps.py: Configures the <cite>units</cite> application settings.
+models.py: Contains the <cite>Unit</cite> model, which represents units of measurement.
+tests.py: Provides test cases for validating the functionality of the <cite>Unit</cite> model.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="manage.html" class="btn btn-neutral float-left" title="manage Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="unit_manager.migrations.html" class="btn btn-neutral float-right" title="unit_manager.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Sulaiman Gafoor.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
